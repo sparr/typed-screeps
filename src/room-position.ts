@@ -11,7 +11,7 @@ interface RoomPosition {
     /**
      * The name of the room.
      */
-    roomName: string;
+    roomName: Name<Room>;
     /**
      * X position in the room.
      */
@@ -218,8 +218,8 @@ interface RoomPositionConstructor extends _Constructor<RoomPosition> {
      * @param roomName The room name.
      * @throws if `x` or `y` are out of bounds, or `roomName` isn't a valid room name.
      */
-    new (x: number, y: number, roomName: string): RoomPosition;
-    (x: number, y: number, roomName: string): RoomPosition;
+    new (x: number, y: number, roomName: Name<Room>): RoomPosition;
+    (x: number, y: number, roomName: Name<Room>): RoomPosition;
 }
 
 declare const RoomPosition: RoomPositionConstructor;
