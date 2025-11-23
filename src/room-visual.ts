@@ -146,7 +146,7 @@ interface LineStyle {
      * Line color in any web format.
      * @default #ffffff (white)
      */
-    color?: string;
+    color?: HexColor;
     /**
      * Opacity value.
      * @default 0.5
@@ -164,7 +164,7 @@ interface PolyStyle {
      * Fill color in any web format.
      * @default undefined (no fill).
      */
-    fill?: string | undefined;
+    fill?: HexColor | undefined;
     /**
      * Opacity value, default is 0.5.
      */
@@ -173,7 +173,7 @@ interface PolyStyle {
      * Stroke color in any web format.
      * @default #ffffff (white)
      */
-    stroke?: string;
+    stroke?: HexColor;
     /**
      * Stroke line width.
      * @default 0.1
@@ -199,7 +199,7 @@ interface TextStyle {
      * Font color in any web format.
      * @default #ffffff (white)
      */
-    color?: string;
+    color?: HexColor;
     /**
      * Either a number or a string in one of the following forms:
      * - 0.7 - relative size in game coordinates
@@ -212,7 +212,7 @@ interface TextStyle {
      * Stroke color in any web format.
      * @default undefined (no stroke)
      */
-    stroke?: string | undefined;
+    stroke?: HexColor | undefined;
     /**
      * Stroke width.
      * @default 0.15

@@ -2325,6 +2325,9 @@ declare namespace Tag {
 type Id<T extends _HasId> = string & Tag.OpaqueTag<T>;
 
 type fromId<T> = T extends Id<infer R> ? R : never;
+
+/** color in the following format: #ffffff (hex triplet). */
+type HexColor = `#${string}`;
 /**
  * `InterShardMemory` object provides an interface for communicating between shards.
  *
@@ -3291,7 +3294,7 @@ interface MapLineStyle {
      * Line color in the following format: #ffffff (hex triplet).
      * @default #ffffff
      */
-    color?: string;
+    color?: HexColor;
     /**
      * Opacity value
      * @default 0.5
@@ -3309,7 +3312,7 @@ interface MapPolyStyle {
      * Fill color in the following format: #ffffff (hex triplet).
      * @default undefined (no fill).
      */
-    fill?: string | undefined;
+    fill?: HexColor | undefined;
     /**
      * Opacity value
      * @default 0.5
@@ -3319,7 +3322,7 @@ interface MapPolyStyle {
      * Stroke color in the following format: #ffffff (hex triplet).
      * @default #ffffff
      */
-    stroke?: string;
+    stroke?: HexColor;
     /**
      * Stroke line width.
      * @default 0.5
@@ -3345,7 +3348,7 @@ interface MapTextStyle {
      * Font color in the following format: #ffffff (hex triplet).
      * @default #ffffff
      */
-    color?: string;
+    color?: HexColor;
     /**
      * The font family.
      * @default sans-serif
@@ -3368,7 +3371,7 @@ interface MapTextStyle {
      * Stroke color in the following format: #ffffff (hex triplet)
      * @default undefined (no stroke).
      */
-    stroke?: string | undefined;
+    stroke?: HexColor | undefined;
     /**
      * Stroke width.
      * @default 0.15
@@ -3380,7 +3383,7 @@ interface MapTextStyle {
      * When background is enabled, text vertical align is set to middle (default is baseline).
      * @default undefined (no background).
      */
-    backgroundColor?: string | undefined;
+    backgroundColor?: HexColor | undefined;
     /**
      * Background rectangle padding.
      * @default 2
@@ -4938,7 +4941,7 @@ interface LineStyle {
      * Line color in any web format.
      * @default #ffffff (white)
      */
-    color?: string;
+    color?: HexColor;
     /**
      * Opacity value.
      * @default 0.5
@@ -4956,7 +4959,7 @@ interface PolyStyle {
      * Fill color in any web format.
      * @default undefined (no fill).
      */
-    fill?: string | undefined;
+    fill?: HexColor | undefined;
     /**
      * Opacity value, default is 0.5.
      */
@@ -4965,7 +4968,7 @@ interface PolyStyle {
      * Stroke color in any web format.
      * @default #ffffff (white)
      */
-    stroke?: string;
+    stroke?: HexColor;
     /**
      * Stroke line width.
      * @default 0.1
@@ -4991,7 +4994,7 @@ interface TextStyle {
      * Font color in any web format.
      * @default #ffffff (white)
      */
-    color?: string;
+    color?: HexColor;
     /**
      * Either a number or a string in one of the following forms:
      * - 0.7 - relative size in game coordinates
@@ -5004,7 +5007,7 @@ interface TextStyle {
      * Stroke color in any web format.
      * @default undefined (no stroke)
      */
-    stroke?: string | undefined;
+    stroke?: HexColor | undefined;
     /**
      * Stroke width.
      * @default 0.15
